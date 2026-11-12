@@ -68,44 +68,41 @@ ntua-ai-coursework/
 
 ---
 
-## Prerequisites
+## Setup and reproducibility
 
-- **Python 3.8+**
-- **Core Python libraries:**
+The courses use distinct runtimes. Read the selected course README and notebook setup cells before preparing an environment; a single bulk installation does not reproduce all eight exercises. Exact historical package versions are not frozen in this repository.
 
-  ```bash
-  pip install numpy pandas matplotlib scikit-learn scikit-fuzzy pillow scikit-image tensorflow torch torchvision torchaudio transformers datasets evaluate sentence-transformers tqdm jupyter
-  ```
+| Course | Runtime/input considerations |
+| --- | --- |
+| Artificial Intelligence | AI Lab 1 is a Colab-link text artifact; its external notebook is not versioned here. AI Lab 2 combines Python, SWI-Prolog and `pyswip`. |
+| Machine Learning | Python/scikit-learn tabular and hyperspectral workflows; keep the supplied CSV/NumPy inputs adjacent to each notebook. CNN feature experiments need their declared numerical framework. |
+| Neural Networks & Deep Learning | PyTorch/Hugging Face notebooks, external datasets/model downloads and GPU memory requirements; DL Lab 1 additionally uses CIFAR-10-C. |
+| Image and Video Technology and Analysis | Image processing and CNN notebooks with their own data/model paths and framework requirements. |
 
-- **SWI-Prolog (v8.x):** required for `AI_Lab2`
+```bash
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/ntua-el21026/NTUA-AI_Coursework.git
+cd NTUA-AI_Coursework
+```
 
-  ```bash
-  sudo apt-get install swi-prolog
-  pip install pyswip
-  ```
+For execution, use the notebook's intended Colab/Jupyter environment, inspect its setup cells, and install only the selected lab's dependencies. Reuse a compatible managed PyTorch/CUDA stack; the repository review does not require installing one locally. Keep support folders beside each notebook. Record actual Python/package/GPU versions, seeds, data/model hashes and the source revision. Write rerun notebooks and generated results to separate storage so submitted evidence remains intact.
 
-Some notebooks download public datasets at runtime. For `DL_Lab1`, download and extract CIFAR-10-C into the path specified by the course README.
+## Evidence and limitations
 
----
+The repository supports a portfolio of coursework implementations by Michail-Athanasios Peppas (03121026). Embedded reports, third-party starter material and referenced work retain their original attribution. This does not establish sole authorship of course designs, datasets or pretrained models.
 
-## Getting Started
+Stored outputs describe historical executions. Some notebooks have outputs with null execution counts; that weakens replay provenance and does not establish non-execution. The IVTA classifier selects a model using test macro-F1, so those comparisons are exploratory coursework selection, not an untouched confirmation test. The ML Lab 2 notebook says 2023–24 while the course README says 2024–25; completion dates require confirmation before use in an application. No training or independent numerical replay was run during portfolio preparation.
 
-1. **Clone the repository**
+## Publication status and asset scope
 
-   ```bash
-   git clone <repo_url> ntua-ai-coursework
-   cd ntua-ai-coursework
-   ```
+This remains a conditional public portfolio candidate. Markdown cell 1 (zero-based) of both `Machine_Learning/ML_Lab1/ML_Lab1.ipynb` and `Machine_Learning/ML_Lab2/ML_Lab2.ipynb` explicitly prohibits posting laboratory solutions on GitHub or other websites and attributes project design/content to the teaching team. Those notices and all submitted solutions/outputs are preserved. A public release containing those solutions requires an applicable documented permission; this preparation contacted no instructors and did not treat removal of notices or coursework as a remedy.
 
-2. **Install dependencies** as listed above.
-3. **Explore each course** by opening its `README.md` and running the lab notebooks in Google Colab or Jupyter.
-4. **Keep lab support folders beside their notebooks** so local imports, data files, PDFs, and saved experiment artifacts resolve correctly.
+Course slides, handouts, papers, templates, datasets and model assets need individual attribution/redistribution review. The MIT notice governs original contributions only within the contributors' rights; it does not override course restrictions or third-party terms. Public-first curation can proceed for material with established permission while retaining this complete local evidence copy.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+Original contributions are offered under MIT to the extent their authors hold the relevant rights. See `LICENSE` and the publication/asset scope above.
 
 ---
 

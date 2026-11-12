@@ -170,3 +170,7 @@ Released under the MIT License. See `LICENSE` for details.
 ---
 
 ### *Prepared by Michael-Athanasios Peppas (03121026)*
+
+## Historical results and publication notice
+
+The result summaries above are coursework descriptions; numerical replay and the exact historical environment were not re-established in portfolio preparation. The lab notebooks' original notices prohibit posting solutions on GitHub or other websites and attribute the project design/content to the teaching team. Preserve these notices and follow the root README's conditional-publication and runtime guidance. ML Lab 2's 2023–24 notebook header and this README's 2024–25 year require reconciliation before asserting completion dates.

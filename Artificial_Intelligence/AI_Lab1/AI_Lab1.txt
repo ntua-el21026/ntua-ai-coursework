@@ -1,1 +1,3 @@
-https://colab.research.google.com/drive/1FvRNBpS0JBHY_WgzuzQOtq8fq7hSPGJG?usp=sharing
+Repository notebook: AI_Lab1.ipynb
+Usage and provenance: README.md and provenance.json
+Original Colab source: https://colab.research.google.com/drive/1FvRNBpS0JBHY_WgzuzQOtq8fq7hSPGJG?usp=sharing

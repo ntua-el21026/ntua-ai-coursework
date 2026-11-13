@@ -1,157 +1,25 @@
-# Artificial Intelligence Lab Projects
+# Artificial Intelligence
 
-**Course:** Artificial Intelligence (NTUA, Summer 2025)
-**Student:** Michael-Athanasios Peppas (03121026)
+Two NTUA laboratory submissions by **Michail-Athanasios Peppas (03121026)**. The notebooks contain implementation, analysis, and historical outputs; the original course instructions and AI-use disclosures remain part of the submissions.
 
----
+## Lab 1: maze search and adversarial agents
 
-## Overview
+Open [AI_Lab1.ipynb](AI_Lab1/AI_Lab1.ipynb). It implements a randomized DFS-style maze generator, a parameterized priority-queue pathfinder, Manhattan/Euclidean/Chebyshev/Octile heuristics, search visualizations, and Alpha-Beta ghost-avoidance experiments. A bonus section uses five manually drawn mazes and a hill-climbing agent.
 
-This repository contains two end-to-end lab exercises covering both classical search techniques and hybrid recommendation systems:
+The implementation is inside the notebook. [AI_Lab1_utils/](AI_Lab1/AI_Lab1_utils/) contains five PNG images, rather than separate Python helper modules. The notebook was independently retrieved from the original Colab link and integrated with limited local asset-path corrections. See the [Lab 1 guide](AI_Lab1/README.md) for local/Colab use and [provenance.json](AI_Lab1/provenance.json) for hashes and the exact change scope.
 
-1. **Lab 1:** Maze generation and pathfinding using BFS, Dijkstra, A*, Greedy Best-First, and adversarial planning with Alpha-Beta pruning.
-2. **Lab 2:** Prolog-backed movie recommender that combines symbolic similarity reasoning (SWI-Prolog) with Python for data handling, personalization, and evaluation.
+Stored labels and conclusions are historical coursework evidence. The zero-cost/zero-heuristic variant labeled BFS uses priority-queue tie ordering rather than a FIFO queue. No new optimality, timing, or win-rate result is claimed here.
 
-All notebooks run in Google Colab or a local Jupyter environment, leveraging Python 3.8+, NumPy, pandas, matplotlib, scikit-learn, and pyswip for Prolog integration.
+## Lab 2: hybrid movie recommendation
 
----
+Open [AI_Lab2.ipynb](AI_Lab2/AI_Lab2.ipynb). Python reads movie metadata, asserts facts into SWI-Prolog through `pyswip`, and combines symbolic movie similarities with user ratings. The notebook includes tiered similarity schemes, caching, parameter comparisons, and precision/recall/F1 evaluation.
 
-## Repository Structure
+[AI_Lab2_utils/](AI_Lab2/AI_Lab2_utils/) includes `db.pl`, `movies_metadata.csv`, `train_ratings.csv`, and `test_ratings.csv`. Recommendation logic is in notebook cells; there is no separate `recommender.py` module.
 
-```bash
-Artificial_Intelligence/
-├── AI_Lab1/
-│   ├── AI_Lab1.ipynb         # Main notebook: maze generation, search algorithms, adversarial planning
-│   └── AI_Lab1_utils/        # Helpers: maze generator, visualization, agent classes, experiment scripts
+Requirements include Python, NumPy, pandas, Matplotlib, scikit-learn, tqdm, `pyswip`, and an installed SWI-Prolog runtime. The notebook contains Colab installation and Drive cells, and repeats the original personal Drive path in several places. For a local copy, skip the Drive-mount cell, set each `path` assignment to the resolved `AI_Lab2_utils/` directory with a trailing separator, and consult the supplied `db.pl` as described in the notebook. For Colab, upload the same files or clone the repository and use its corresponding runtime path. Preserve the submitted notebook when adapting paths for a rerun.
 
-├── AI_Lab2/
-│   ├── AI_Lab2.ipynb         # Main notebook: Prolog-backed movie recommender
-│   └── AI_Lab2_utils/        # Helpers: db.pl (rules), CSV metadata and ratings
+## Reproducibility and rights
 
-└── README.md                 # This file
-```
+The labs use different dependencies and are not distributed as an installable package or a locked environment. Inspect setup cells before execution and record actual versions, seeds, and input hashes. Run experiments on a copy and retain the original outputs.
 
----
-
-## Project 1 – Maze Pathfinding & Adversarial Agents
-
-**Notebook:** `AI_Lab1/AI_Lab1.ipynb`
-**Utilities:** `AI_Lab1_utils/`
-
-### Key Concepts & Techniques
-
-- **Maze Generation:** Randomized DFS with tunable wall density (threshold parameter).
-- **Search Algorithms:**
-  - **Breadth‑First Search (BFS)** for unweighted shortest paths.
-  - **Dijkstra’s Algorithm** (uniform-cost search).
-  - **A\*** with admissible heuristics (Manhattan, Euclidean, Chebyshev, Octile).
-  - **Greedy Best‑First Search** (heuristic-only guidance).
-- **Heuristic Design:** Impact of g(n) and h(n) choices on optimality and performance.
-- **Adversarial Planning:** Minimax with Alpha‑Beta pruning—agent vs. ghost.
-- **Visualization:** Step‑by‑step frontier expansion, animated GIFs, reliability of visual insights vs. quantitative metrics.
-
-### Implementation Details
-
-- **Languages & Libraries:** Python 3.8+, NumPy, matplotlib, queue, random.
-- **Classes:**
-  - `Maze`: grid representation, neighbor queries, rendering.
-  - `Pathfinder`: unified interface for g/h combinations, path reconstruction, complexity tracking.
-  - `Agent` & `ABagent`: adversarial chaser (A*) and escapee (Alpha‑Beta) implementations.
-- **Experiments:**
-  - Complexity vs. maze size (N ∈ {11, 25, 41, 51, 61}).
-  - Node expansions, path length, execution time logged and plotted.
-  - Bonus: interactive maze drawing and custom scenario design.
-
-### Results Highlights
-
-- **Search Scaling:**
-  - BFS expansions grow ~O(N²); heuristics reduce expansions by up to 90%.
-  - A* with Octile heuristic often yields the best expansion–optimality tradeoff.
-- **Adversarial Behavior:**
-  - Alpha‑Beta agent with combined goal/ghost heuristic escapes in >80% of sparse mazes (depth=5).
-  - Visualization aids intuition but quantitative metrics (win rate, time) confirm robustness.
-
----
-
-## Project 2 – Hybrid Movie Recommendation System
-
-**Notebook:** `AI_Lab2/AI_Lab2.ipynb`
-**Utilities:** `AI_Lab2_utils/`
-
-### Key Concepts & Techniques
-
-- **Symbolic Reasoning:** SWI‑Prolog knowledge base (`db.pl`) encoding movie facts and similarity rules.
-- **Data Handling:** pandas for CSV I/O, DataFrame manipulation.
-- **Similarity Models:** Six composite schemes (basic_sim_1…adv_sim_3), normalized to 0–100, tiered recommendations (5 levels).
-- **Hybrid Pipeline:**
-  1. **Prolog Queries:** `find_sim_tier/3` and `similar/3` for content-based recommendations.
-  2. **Python Interface:** `recommender.py` to cache similarities and normalize scores.
-  3. **User Personalization:** weighted aggregation of neighbor scores based on user ratings.
-- **Evaluation Metrics:** precision, recall, F1-score via scikit-learn.
-- **Experimentation:** grid search over models, tier ranges, training size, thresholds; diagnostic plots and heatmaps.
-
-### Implementation Details
-
-- **Languages & Libraries:** Python 3.8+, pandas, numpy, pyswip, scikit-learn, matplotlib.
-- **Prolog Setup:** `pyswip` embedding, dynamic fact assertion, consult `db.pl`.
-- **Similarity Caching:** Preload tiered neighbor sets to avoid repeated Prolog calls.
-- **Training Loop:**
-  - Sample user ratings (N ∈ {3,5,10,25,50,75,all}).
-  - Aggregate weighted votes by tier (min_votes filter).
-  - Generate recommendation scores, filter seen movies.
-- **Evaluation Loop:**
-  - Predict binary likes (threshold auto or fixed).
-  - Compute metrics over test set, average across repetitions.
-  - Visualize F1 heatmaps, precision–recall scatter, line plots, boxplots.
-
-### Results Highlights
-
-- **Content-Based Only:** `adv_sim_1` model yields the most balanced precision (∼0.60) and recall (∼0.95).
-- **Personalization Impact:** using ≥10 ratings achieves >0.65 F1; diminishing returns beyond 25.
-- **Model Sensitivity:** `basic_sim_3` excels at production-scale similarity (high precision), `adv_sim_2` at global-popularity filtering.
-
----
-
-## Prerequisites
-
-- **Python 3.8+**
-- **Libraries:**
-
-  ```bash
-  pip install numpy pandas matplotlib pyswip scikit-learn
-  ```
-
-- **SWI‑Prolog (v8.x):** required for Project 2 Prolog integration.
-  - On Colab:
-
-    ```bash
-    sudo apt-get install swi-prolog
-    pip install pyswip
-    ```
-
----
-
-## Usage
-
-1. **Clone the repository**
-
-   ```bash
-   git clone <repo_url> Artificial_Intelligence
-   cd Artificial_Intelligence
-   ```
-
-2. **Install dependencies** (see Prerequisites).
-3. **Run notebooks** in Colab or Jupyter:
-   - Ensure `AI_Lab1_utils/` and `AI_Lab2_utils/` folders are alongside their notebooks.
-   - For Colab, mount Google Drive if needed and adjust paths accordingly.
-4. **Visualize results** and inspect final sections of each notebook for plots, GIFs, and analysis.
-
----
-
-## License
-
-This project is licensed under the MIT License. See `LICENSE` for details.
-
----
-
-## *Prepared by Michael-Athanasios Peppas (03121026)*
+Movie data, course design, and starter material keep their original rights. See the repository's [publication and licensing notes](../README.md#authorship-publication-and-licensing) and [MIT license](../LICENSE) for the scope of original contributions.

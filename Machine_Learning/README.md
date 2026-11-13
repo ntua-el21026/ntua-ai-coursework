@@ -1,176 +1,33 @@
-# Machine Learning Lab Projects
+# Machine Learning
 
-**Course:** Machine Learning (NTUA, Academic Year 2024–25)
-**Student:** Michael-Athanasios Peppas (03121026)
+Two individual NTUA coursework notebooks by **Michail-Athanasios Peppas (03121026)**. Both retain Greek assignment text, implementations, recorded outputs, and the teaching team's publication notices.
 
----
+## Labs and supplied inputs
 
-## Overview
+| Lab | Work implemented | Supplied files |
+| --- | --- | --- |
+| [Lab 1](ML_Lab1/ML_Lab1.ipynb) | RainTomorrow classification; missing-value handling, preprocessing, classifier comparisons, grid search, and test predictions | [ML_Lab1_utils/](ML_Lab1/ML_Lab1_utils/): `train-val.csv`, `test.csv` |
+| [Lab 2](ML_Lab2/ML_Lab2.ipynb) | Salinas hyperspectral clustering with KMeans, PCA, and fuzzy C-means; EuroSAT image clustering/feature experiments with MobileNetV3Small | [ML_Lab2_utils/](ML_Lab2/ML_Lab2_utils/): `salinas_image.npy`, `salinas_labels.npy` |
 
-This repository contains two end-to-end lab exercises covering both supervised classification on tabular data and clustering of hyperspectral imagery:
+Lab 1 compares scikit-learn classifiers including logistic regression, Gaussian naive Bayes, K-nearest neighbors, decision trees, random forests, SVMs, and MLPs. Lab 2 evaluates cluster assignments using adjusted Rand scores and silhouette measures where applicable. Numerical comparisons and their settings are recorded in the notebooks; no new results are asserted by this guide.
 
-1. **Lab 1:** “RainTomorrow” classification pipeline including data cleaning, feature encoding, scaling, model training (GaussianNB, KNN, Logistic Regression, SVM, MLP, Decision Tree, Random Forest) and evaluation.
-2. **Lab 2:** Salinas hyperspectral image analysis using dimensionality reduction (PCA), clustering (KMeans, Fuzzy C-Means), and deep feature extraction via a pretrained CNN.
-
-All notebooks run in Google Colab or a local Jupyter environment, leveraging Python 3.8+, pandas, NumPy, scikit-learn, matplotlib, scikit-fuzzy, and TensorFlow or PyTorch for CNN-based feature extraction.
-
----
-
-## Repository Structure
+## Running a copy
 
 ```bash
-Machine_Learning/
-├── ML_Lab1/
-│   ├── ML_Lab1.ipynb             # Weather forecasting classification pipeline
-│   └── ML_Lab1_utils/
-│       ├── train-val.csv         # Combined training and validation data (70% train / 30% validation)
-│       ├── test.csv              # Hold-out test dataset for final predictions
-├── ML_Lab2/
-│   ├── ML_Lab2.ipynb             # Hyperspectral clustering & CNN-based feature analysis
-│   └── ML_Lab2_utils/
-│       ├── salinas_image.npy     # Hyperspectral image array (512×217×224)
-│       ├── salinas_labels.npy    # Ground truth labels (17 classes)
-└── README.md                     # Project overview and instructions
+git clone https://github.com/ntua-el21026/ntua-ai-coursework.git
+cd ntua-ai-coursework/Machine_Learning
 ```
 
----
+Use a separate environment for the chosen notebook. Common libraries include NumPy, pandas, Matplotlib, seaborn, and scikit-learn. Lab 2 imports `FCM` from the **`fuzzy-c-means`** package and TensorFlow/Keras for the image-feature section; `scikit-fuzzy` is not the imported FCM dependency.
 
-## Lab 1 – RainTomorrow Classification
+The submitted notebooks load the CSV/NumPy filenames from the current working directory, while Git stores those inputs in the adjacent utility folders. In a rerun copy, either copy the supplied inputs beside the notebook or adapt the file references to the utility directory. Inspect cells before execution: Lab 2 downloads/extracts EuroSAT into `2750/` and obtains pretrained weights; those large third-party assets are not versioned here. Historical download cells disable certificate checks; obtain and verify the dataset through an authorized trusted source when preparing a new run.
 
-**Path:** `ML_Lab1/`
-**Notebook:** `ML_Lab1.ipynb`
-**Utilities:** `ML_Lab1_utils/`
+Lab 1 writes `submission_nopt_fin.csv` and `submission_opt_fin.csv` to the working directory. Keep new predictions and outputs separate from the original evidence. Exact package versions and a complete historical environment lock are not available.
 
-### Description
+## Evidence and publication limits
 
-Predict next-day rainfall (`RainTomorrow`) using historical weather observations.
+Both notebooks explicitly prohibit posting laboratory solutions on GitHub or other websites in Markdown cell 1 (zero-based), and credit the teaching team for project design/content. The notices and submitted work are preserved. An applicable documented permission is required to redistribute the restricted material publicly; repository visibility does not establish permission.
 
-### Key Concepts & Techniques
+Lab 1's header names academic year 2024–25; Lab 2's header names 2023–24. This discrepancy remains unresolved, so a common completion year is not asserted. Recorded metrics have not been independently replayed during documentation preparation.
 
-- **Data Handling & EDA**
-  - `pandas` for DataFrame operations, missing data profiling (`df.isnull()`) and descriptive statistics.
-  - Visualization of feature distributions with histograms and boxplots.
-- **Preprocessing Pipeline**
-  - **Imputation:**
-    - Numerical: `SimpleImputer(strategy='mean')` grouped by location or date.
-    - Categorical: mode-based filling per feature.
-  - **Encoding:**
-    - `OneHotEncoder` for low-cardinality features.
-    - **Target Encoding** for `Location` to capture spatial rainfall patterns.
-  - **Scaling:** `StandardScaler` for numerical features.
-- **Feature Selection**
-  - Correlation-based filtering to remove redundant features.
-  - Creation of engineered features (e.g., humidity difference, pressure gradient).
-- **Modeling**
-  - Algorithms:
-    - **GaussianNB**, **KNeighborsClassifier** (k=5)
-    - **LogisticRegression** (L2 regularization)
-    - **MLPClassifier** (one hidden layer of 100 units)
-    - **SVC** with RBF kernel
-    - **DecisionTreeClassifier**
-    - **RandomForestClassifier** (n_estimators=100)
-  - Pipeline integration with `sklearn.pipeline.Pipeline`.
-  - Cross-validation using `StratifiedKFold` (5 folds).
-- **Evaluation**
-  - Metrics: Precision, Recall, F1-score (`classification_report`), ROC-AUC curves, Confusion Matrix.
-  - Train/Validation/Test split: 70% training, 30% validation; final test on `test.csv`.
-  - Visualization: bar plots for F1-scores, ROC and PR curves.
-
-### Results Highlights
-
-- **Random Forest:** F1-score ~0.96 on validation.
-- **Logistic Regression:** ROC-AUC ~0.92 consistently across folds.
-- **Feature Importance:** Wind speed, humidity gradient, and pressure difference are top predictors.
-- **Kaggle Submission:** `submission_opt_fin.csv` generated for leaderboard evaluation.
-
----
-
-## Lab 2 – Salinas Hyperspectral Clustering & Classification
-
-**Path:** `ML_Lab2/`
-**Notebook:** `ML_Lab2.ipynb`
-**Utilities:** `ML_Lab2_utils/`
-
-### Description
-
-Cluster and analyze Salinas hyperspectral data, comparing raw-pixel clustering with deep CNN feature clustering.
-
-### Key Concepts & Techniques
-
-- **Data Preparation & Visualization**
-  - Load hyperspectral cube (`salinas_image.npy`) and label map (`salinas_labels.npy`) via `numpy`.
-  - Plot sample spectral bands and true label distribution with `matplotlib`.
-- **Spectral Signature Analysis**
-  - Compute and plot mean reflectance curves for each class channel.
-- **Dimensionality Reduction**
-  - PCA (`sklearn.decomposition.PCA`) to reduce to top 3 components capturing >99% variance.
-- **Clustering Methods**
-  - **KMeans** (`n_clusters=17`, `init='k-means++'`) for hard clustering.
-  - **Fuzzy C-Means** via `scikit-fuzzy` (`m=2.0`) for soft clustering.
-- **Deep Feature Extraction**
-  - Extract features from pretrained **MobileNetV3** (TensorFlow or PyTorch) using global average pooling.
-- **Evaluation Metrics**
-  - **Adjusted Rand Index (ARI)**, **Silhouette Score** for clustering performance.
-  - Comparison of raw pixel vs. PCA vs. CNN features.
-- **Visualization**
-  - 2D scatter plots of PCA projections colored by cluster.
-  - Grid display of representative pixel patches per cluster.
-
-### Results Highlights
-
-- **Raw Pixel KMeans:** ARI ~0.15.
-- **PCA + KMeans:** ARI ~0.30, significant speed-up and variance preservation.
-- **CNN Features + KMeans:** ARI ~0.55, demonstrating transfer learning benefits.
-- **Fuzzy C-Means:** Provides smoother cluster boundaries, ARI ~0.48.
-
----
-
-## Results & Discussion
-
-Detailed figures, metrics tables, and analysis are provided in the result sections of each notebook, including:
-
-- Classification performance comparisons across algorithms.
-- Clustering quality for different feature representations.
-- Interpretations of model strengths and limitations.
-
----
-
-## Prerequisites
-
-- Python 3.8+
-- Libraries: `numpy`, `pandas`, `matplotlib`, `scikit-learn`, `scikit-fuzzy`, `tensorflow` or `torch`
-
-Install via:
-
-```bash
-pip install numpy pandas matplotlib scikit-learn scikit-fuzzy tensorflow
-```
-
----
-
-## Usage
-
-1. **Clone the repository**
-
-   ```bash
-   git clone <repo_url> Machine_Learning
-   cd Machine_Learning
-   ```
-
-2. **Install dependencies** as above.
-3. **Ensure data files** in `ML_Lab1_utils/` and `ML_Lab2_utils/`.
-4. **Open notebooks** (`.ipynb`) in Google Colab or Jupyter and run sequentially.
-
----
-
-## License
-
-Released under the MIT License. See `LICENSE` for details.
-
----
-
-### *Prepared by Michael-Athanasios Peppas (03121026)*
-
-## Historical results and publication notice
-
-The result summaries above are coursework descriptions; numerical replay and the exact historical environment were not re-established in portfolio preparation. The lab notebooks' original notices prohibit posting solutions on GitHub or other websites and attribute the project design/content to the teaching team. Preserve these notices and follow the root README's conditional-publication and runtime guidance. ML Lab 2's 2023–24 notebook header and this README's 2024–25 year require reconciliation before asserting completion dates.
+The root [MIT license](../LICENSE) applies only to original contributions within the authors' rights. See the [asset inventory](../docs/ASSETS.md) for external datasets and the repository [publication notes](../README.md#authorship-publication-and-licensing).

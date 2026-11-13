@@ -1,109 +1,45 @@
 # NTUA AI Coursework
 
-**Student:** Michael-Athanasios Peppas (03121026)
-**Institution:** National Technical University of Athens, ECE
+Eight laboratory submissions by **Michail-Athanasios Peppas (03121026)** for the NTUA School of Electrical and Computer Engineering. The collection covers classical search, symbolic recommendation, machine learning, deep learning, and image analysis. Notebooks retain their explanations and recorded outputs; the repository is an academic archive with lab-specific execution requirements.
 
-This repository includes Google Colab notebooks from four NTUA ECE courses: Artificial Intelligence, Machine Learning, Neural Networks & Deep Learning, and Image and Video Technology and Analysis. Each course contains two comprehensive lab projects with supporting code, data, references, and experiment notes.
+## Coursework index
 
----
+| Course | Lab | Implementation and evidence |
+| --- | --- | --- |
+| [Artificial Intelligence](Artificial_Intelligence/README.md) | 1 | [Maze generation, priority-queue search variants, and adversarial Alpha-Beta agents](Artificial_Intelligence/AI_Lab1/AI_Lab1.ipynb); [execution and provenance notes](Artificial_Intelligence/AI_Lab1/README.md) |
+| Artificial Intelligence | 2 | [Python/SWI-Prolog movie recommender](Artificial_Intelligence/AI_Lab2/AI_Lab2.ipynb), with [rules and CSV inputs](Artificial_Intelligence/AI_Lab2/AI_Lab2_utils/) |
+| [Machine Learning](Machine_Learning/README.md) | 1 | [RainTomorrow classification](Machine_Learning/ML_Lab1/ML_Lab1.ipynb): preprocessing, classifier comparison, and model selection |
+| Machine Learning | 2 | [Salinas hyperspectral clustering and EuroSAT feature experiments](Machine_Learning/ML_Lab2/ML_Lab2.ipynb) |
+| [Neural Networks and Deep Learning](Neural_Networks_and_Deep_Learning/README.md) | 1 | [WideResNet, Mixup, calibration, and CIFAR-10-C evaluation](Neural_Networks_and_Deep_Learning/DL_Lab1/DL_Lab1.ipynb); helper code and large artifacts remain external |
+| Neural Networks and Deep Learning | 2 | [Transformer workflows for Yelp Polarity, PiQA, TruthfulQA, and Winogrande](Neural_Networks_and_Deep_Learning/DL_Lab2/DL_Lab2.ipynb) |
+| [Image and Video Technology and Analysis](Image_and_Video_Technology_and_Analysis/README.md) | 1 | [Gaussian/Laplacian pyramids, reconstruction, entropy, and quantization](Image_and_Video_Technology_and_Analysis/lab1/IVTA_03121026_Peppas_Michael_1.ipynb) |
+| Image and Video Technology and Analysis | 2 | [CIFAR-100 subset CNN comparison, regularization, and transfer learning](Image_and_Video_Technology_and_Analysis/lab2/IVTA_03121026_Peppas_Michael_2.ipynb) |
 
-## Courses
+[Image-analysis teaching notebooks](Image_and_Video_Technology_and_Analysis/lab_material/) and the original papers, handouts, templates, and supplied data provide context. They retain their respective authorship and rights.
 
-### Artificial Intelligence
-
-- **AI_Lab1:** Maze generation, search algorithms (BFS, Dijkstra, A*, Greedy), and adversarial planning with Alpha-Beta agents.
-- **AI_Lab2:** Hybrid movie recommender combining SWI-Prolog symbolic reasoning and Python for data handling and evaluation.
-
-See `Artificial_Intelligence/README.md` for detailed instructions, key concepts, and results.
-
-### Machine Learning
-
-- **ML_Lab1:** RainTomorrow classification: data preprocessing, feature engineering, model training with scikit-learn, and evaluation.
-- **ML_Lab2:** Salinas hyperspectral clustering and classification using KMeans, Fuzzy C-Means, PCA, and CNN feature extraction.
-
-See `Machine_Learning/README.md` for detailed instructions, key concepts, and results.
-
-### Neural Networks & Deep Learning
-
-- **DL_Lab1:** WideResNet architectures on CIFAR-10, Mixup augmentation, calibration measurement, and robustness on CIFAR-10-C.
-- **DL_Lab2:** Transformer fine-tuning for sentiment, PiQA, TruthfulQA, and Winogrande tasks using Hugging Face.
-
-See `Neural_Networks_and_Deep_Learning/README.md` for detailed instructions, key concepts, and results.
-
-### Image and Video Technology and Analysis
-
-- **Lab 1:** Laplacian pyramid image coding with Gaussian/Laplacian pyramid construction, exact reconstruction, entropy analysis, and quantization experiments.
-- **Lab 2:** CNN image classification on a 20-class CIFAR-100 subset using LeNet, AlexNet, VGG, MyCNN, dropout/data augmentation, VGG19, and EfficientNetB0.
-
-See `Image_and_Video_Technology_and_Analysis/README.md` for detailed instructions, key concepts, and results.
-
----
-
-## Repository Structure
+## Inspection and execution
 
 ```bash
-ntua-ai-coursework/
-├── Artificial_Intelligence/
-│   ├── AI_Lab1/
-│   ├── AI_Lab2/
-│   └── README.md
-├── Machine_Learning/
-│   ├── ML_Lab1/
-│   ├── ML_Lab2/
-│   └── README.md
-├── Neural_Networks_and_Deep_Learning/
-│   ├── DL_Lab1/
-│   ├── DL_Lab2/
-│   └── README.md
-├── Image_and_Video_Technology_and_Analysis/
-│   ├── lab1/
-│   ├── lab2/
-│   ├── lab_material/
-│   └── README.md
-├── docs/
-│   └── project_structure/
-├── LICENSE
-└── README.md
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/ntua-el21026/ntua-ai-coursework.git
+cd ntua-ai-coursework
 ```
 
----
+Read the selected course README and notebook setup cells before preparing an environment. There is no common dependency lock or repository-wide test runner. AI Lab 1 is now included with its five original maze images; its [provenance record](Artificial_Intelligence/AI_Lab1/provenance.json) identifies the independently retrieved source and the limited asset-path changes.
 
-## Setup and reproducibility
+The other submitted notebooks retain historical paths. For a rerun, work on a copy and map the supplied inputs to the filenames expected by that notebook. Managed Colab is appropriate for GPU workloads; reuse a compatible provider PyTorch/CUDA stack. Local Jupyter is suitable where the notebook's libraries and platform-specific cells permit it. Do not assume every notebook supports an unchanged local “Run all”. See the [asset and portability inventory](docs/ASSETS.md) for missing helpers, external downloads, and required paths.
 
-The courses use distinct runtimes. Read the selected course README and notebook setup cells before preparing an environment; a single bulk installation does not reproduce all eight exercises. Exact historical package versions are not frozen in this repository.
-
-| Course | Runtime/input considerations |
-| --- | --- |
-| Artificial Intelligence | AI Lab 1 is a Colab-link text artifact; its external notebook is not versioned here. AI Lab 2 combines Python, SWI-Prolog and `pyswip`. |
-| Machine Learning | Python/scikit-learn tabular and hyperspectral workflows; keep the supplied CSV/NumPy inputs adjacent to each notebook. CNN feature experiments need their declared numerical framework. |
-| Neural Networks & Deep Learning | PyTorch/Hugging Face notebooks, external datasets/model downloads and GPU memory requirements; DL Lab 1 additionally uses CIFAR-10-C. |
-| Image and Video Technology and Analysis | Image processing and CNN notebooks with their own data/model paths and framework requirements. |
-
-```bash
-GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/ntua-el21026/NTUA-AI_Coursework.git
-cd NTUA-AI_Coursework
-```
-
-For execution, use the notebook's intended Colab/Jupyter environment, inspect its setup cells, and install only the selected lab's dependencies. Reuse a compatible managed PyTorch/CUDA stack; the repository review does not require installing one locally. Keep support folders beside each notebook. Record actual Python/package/GPU versions, seeds, data/model hashes and the source revision. Write rerun notebooks and generated results to separate storage so submitted evidence remains intact.
+Record Python/package versions, hardware, seeds, data/model hashes, and the source revision for a new execution. Store rerun notebooks, checkpoints, and generated results separately from the submitted evidence. Training and full experiment sweeps are substantial workloads.
 
 ## Evidence and limitations
 
-The repository supports a portfolio of coursework implementations by Michail-Athanasios Peppas (03121026). Embedded reports, third-party starter material and referenced work retain their original attribution. This does not establish sole authorship of course designs, datasets or pretrained models.
+Recorded notebook outputs are the source for coursework results. They have not been independently numerically replayed during documentation preparation. Some output-bearing cells have null execution counts, and the historical environments are not fully frozen. The IVTA classifier selects configurations using test macro-F1; those comparisons are exploratory model selection, rather than an untouched confirmation test. ML Lab 2's header names 2023–24 while the earlier course overview named 2024–25; the completion year remains unresolved.
 
-Stored outputs describe historical executions. Some notebooks have outputs with null execution counts; that weakens replay provenance and does not establish non-execution. The IVTA classifier selects a model using test macro-F1, so those comparisons are exploratory coursework selection, not an untouched confirmation test. The ML Lab 2 notebook says 2023–24 while the course README says 2024–25; completion dates require confirmation before use in an application. No training or independent numerical replay was run during portfolio preparation.
+AI Lab 1 preserves its original algorithm names and conclusions. In particular, the combination labeled BFS uses a `PriorityQueue` with coordinate-based tie ordering and zero edge cost; it is not a conventional FIFO BFS implementation. The original work has not been changed to resolve that distinction.
 
-## Publication status and asset scope
+## Authorship, publication, and licensing
 
-This remains a conditional public portfolio candidate. Markdown cell 1 (zero-based) of both `Machine_Learning/ML_Lab1/ML_Lab1.ipynb` and `Machine_Learning/ML_Lab2/ML_Lab2.ipynb` explicitly prohibits posting laboratory solutions on GitHub or other websites and attributes project design/content to the teaching team. Those notices and all submitted solutions/outputs are preserved. A public release containing those solutions requires an applicable documented permission; this preparation contacted no instructors and did not treat removal of notices or coursework as a remedy.
+The submissions identify Michail-Athanasios Peppas; assignment designs, starter code, teaching materials, datasets, pretrained models, and cited papers retain their original attribution. AI-use disclosures in the notebooks remain intact.
 
-Course slides, handouts, papers, templates, datasets and model assets need individual attribution/redistribution review. The MIT notice governs original contributions only within the contributors' rights; it does not override course restrictions or third-party terms. Public-first curation can proceed for material with established permission while retaining this complete local evidence copy.
+Both Machine Learning notebooks explicitly prohibit posting laboratory solutions on GitHub or other websites and attribute the project design/content to the teaching team (Markdown cell 1, zero-based). Those notices and submissions are preserved. An applicable documented permission is required for public redistribution of that material. Repository visibility is not evidence of such permission.
 
----
-
-## License
-
-Original contributions are offered under MIT to the extent their authors hold the relevant rights. See `LICENSE` and the publication/asset scope above.
-
----
-
-## *Prepared by Michael-Athanasios Peppas (03121026)*
+Course slides, handouts, papers, templates, datasets, and model assets require individual rights review. The [MIT license](LICENSE) covers original contributions only to the extent their authors hold the relevant rights; it does not override course restrictions or third-party terms.

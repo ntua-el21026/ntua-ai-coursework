@@ -1,0 +1,67 @@
+{
+  "source_url": "https://colab.research.google.com/drive/1FvRNBpS0JBHY_WgzuzQOtq8fq7hSPGJG?usp=sharing",
+  "download_url": "https://drive.google.com/uc?export=download&id=1FvRNBpS0JBHY_WgzuzQOtq8fq7hSPGJG",
+  "original_filename": "AI_25_03121026.ipynb",
+  "retrieved_utc_date": "2026-11-13",
+  "original_size_bytes": 8171951,
+  "original_sha256": "7e4302dfffcbc630a8766fecaa1275329d20cc2d98eb8ccb59b1dba66679ac3c",
+  "repository_path": "Artificial_Intelligence/AI_Lab1/AI_Lab1.ipynb",
+  "repository_size_bytes": 8171865,
+  "repository_sha256": "144bf960bd2cc72d07174f4e5f7af7f94e27a54878a88fd4d8fdc3881248d9dc",
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "cells": {
+    "total": 86,
+    "markdown": 48,
+    "code": 38
+  },
+  "portability_changes": [
+    {
+      "cell_index_zero_based": 63,
+      "change": "Use drawing.png in the working directory instead of /content/drawing.png."
+    },
+    {
+      "cell_index_zero_based": 68,
+      "change": "Describe repository maze images instead of a Google Drive mount."
+    },
+    {
+      "cell_index_zero_based": 69,
+      "change": "Use AI_Lab1_utils/ instead of mounting personal Google Drive and using its Mazes directory."
+    }
+  ],
+  "preservation": "All other cell content, outputs, execution counts, cell metadata and notebook metadata are unchanged. Stored outputs precede these path-only changes.",
+  "review": "Source, metadata, text/HTML outputs and embedded image payloads inspected without executing notebook code. Author identity and Colab execution provenance retained; no credential pattern identified. Course instructions and AI-use disclaimer retained.",
+  "execution_status": "Not executed during integration.",
+  "assets": [
+    {
+      "path": "AI_Lab1_utils/5.1.png",
+      "size_bytes": 5183,
+      "sha256": "a279b6e15aa0d92d59d7f0599371ae7997cefd871464953010a292e422d7d81c",
+      "matches_original_draw_output": true
+    },
+    {
+      "path": "AI_Lab1_utils/5.2.png",
+      "size_bytes": 6260,
+      "sha256": "c5ba223d59f116f3fe48b24dd12ebfaaaad21146996fd9dba33c219fb92f98a9",
+      "matches_original_draw_output": true
+    },
+    {
+      "path": "AI_Lab1_utils/5.3.png",
+      "size_bytes": 6260,
+      "sha256": "410bc474a4a2e523fb5ec7b70408afda71924fffeca819962ae6f0efd2c13509",
+      "matches_original_draw_output": true
+    },
+    {
+      "path": "AI_Lab1_utils/5.4.png",
+      "size_bytes": 6860,
+      "sha256": "eddb7fd0249587eb596355444bfb4fb547e26a2eb4c2172e2a8bd64abd33df90",
+      "matches_original_draw_output": true
+    },
+    {
+      "path": "AI_Lab1_utils/5.5.png",
+      "size_bytes": 5765,
+      "sha256": "4d01a98147eeb7cc59e8b4e58cbea5b04a3da07dd27193bccce0c6ee5fe0fd4d",
+      "matches_original_draw_output": true
+    }
+  ]
+}

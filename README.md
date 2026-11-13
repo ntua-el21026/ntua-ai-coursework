@@ -1,6 +1,6 @@
 # NTUA AI Coursework
 
-Eight laboratory submissions by **Michail-Athanasios Peppas (03121026)** for the NTUA School of Electrical and Computer Engineering. The collection covers classical search, symbolic recommendation, machine learning, deep learning, and image analysis. Notebooks retain their explanations and recorded outputs; the repository is an academic archive with lab-specific execution requirements.
+Eight laboratory submissions by **Michail Athanasios Peppas (03121026)** for the NTUA School of Electrical and Computer Engineering. The collection covers classical search, symbolic recommendation, machine learning, deep learning, and image analysis. Notebooks retain their explanations and recorded outputs; the repository is an academic archive with lab-specific execution requirements.
 
 ## Coursework index
 

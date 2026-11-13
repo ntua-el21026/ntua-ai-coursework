@@ -1,7 +1,7 @@
 # Image and Video Technology and Analysis Lab Projects
 
 **Course:** Image and Video Technology and Analysis (NTUA, Spring 2026)
-**Student:** Michael-Athanasios Peppas (03121026)
+**Student:** Michail Athanasios Peppas (03121026)
 
 ---
 
@@ -239,7 +239,7 @@ The `lab_material/` folder contains instructor-provided notebooks used as supple
 
 ---
 
-## *Prepared by Michael-Athanasios Peppas (03121026)*
+## *Prepared by Michail Athanasios Peppas (03121026)*
 
 ## Inputs, paths, and evidence
 

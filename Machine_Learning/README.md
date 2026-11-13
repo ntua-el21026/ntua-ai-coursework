@@ -1,6 +1,6 @@
 # Machine Learning
 
-Two individual NTUA coursework notebooks by **Michail-Athanasios Peppas (03121026)**. Both retain Greek assignment text, implementations, and recorded outputs.
+Two individual NTUA coursework notebooks by **Michail Athanasios Peppas (03121026)**. Both retain Greek assignment text, implementations, and recorded outputs.
 
 ## Labs and supplied inputs
 

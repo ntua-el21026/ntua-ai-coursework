@@ -1,6 +1,6 @@
 # Neural Networks and Deep Learning
 
-NTUA laboratory notebooks by **Michail-Athanasios Peppas (03121026)**, preserving training/evaluation code, discussion, and recorded outputs. The two labs have distinct data and model requirements.
+NTUA laboratory notebooks by **Michail Athanasios Peppas (03121026)**, preserving training/evaluation code, discussion, and recorded outputs. The two labs have distinct data and model requirements.
 
 ## Lab 1: WideResNet and Mixup
 

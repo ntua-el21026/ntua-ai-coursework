@@ -1,6 +1,6 @@
 # Artificial Intelligence
 
-Two NTUA laboratory submissions by **Michail-Athanasios Peppas (03121026)**. The notebooks contain implementation, analysis, and historical outputs; the original course instructions and AI-use disclosures remain part of the submissions.
+Two NTUA laboratory submissions by **Michail Athanasios Peppas (03121026)**. The notebooks contain implementation, analysis, and historical outputs; the original course instructions and AI-use disclosures remain part of the submissions.
 
 ## Lab 1: maze search and adversarial agents
 

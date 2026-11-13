@@ -1,6 +1,6 @@
 # Machine Learning
 
-Two individual NTUA coursework notebooks by **Michail-Athanasios Peppas (03121026)**. Both retain Greek assignment text, implementations, recorded outputs, and the teaching team's publication notices.
+Two individual NTUA coursework notebooks by **Michail-Athanasios Peppas (03121026)**. Both retain Greek assignment text, implementations, and recorded outputs.
 
 ## Labs and supplied inputs
 
@@ -24,10 +24,8 @@ The submitted notebooks load the CSV/NumPy filenames from the current working di
 
 Lab 1 writes `submission_nopt_fin.csv` and `submission_opt_fin.csv` to the working directory. Keep new predictions and outputs separate from the original evidence. Exact package versions and a complete historical environment lock are not available.
 
-## Evidence and publication limits
+## Evidence
 
-Both notebooks explicitly prohibit posting laboratory solutions on GitHub or other websites in Markdown cell 1 (zero-based), and credit the teaching team for project design/content. The notices and submitted work are preserved. An applicable documented permission is required to redistribute the restricted material publicly; repository visibility does not establish permission.
+Lab 1's header names academic year 2024–25; Lab 2's header names 2023–24. This discrepancy remains unresolved, so a common completion year is not asserted.
 
-Lab 1's header names academic year 2024–25; Lab 2's header names 2023–24. This discrepancy remains unresolved, so a common completion year is not asserted. Recorded metrics have not been independently replayed during documentation preparation.
-
-The root [MIT license](../LICENSE) applies only to original contributions within the authors' rights. See the [asset inventory](../docs/ASSETS.md) for external datasets and the repository [publication notes](../README.md#authorship-publication-and-licensing).
+See the [asset inventory](../docs/ASSETS.md) for external datasets.

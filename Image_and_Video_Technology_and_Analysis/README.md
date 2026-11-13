@@ -239,18 +239,12 @@ The `lab_material/` folder contains instructor-provided notebooks used as supple
 
 ---
 
-## License
-
-Original contributions are covered by the root [MIT license](../LICENSE) within the authors' rights. Course notebooks, handouts, datasets, pretrained models, and papers retain their own terms; see the root [publication notes](../README.md#authorship-publication-and-licensing).
-
----
-
 ## *Prepared by Michael-Athanasios Peppas (03121026)*
 
 ## Inputs, paths, and evidence
 
 The submitted notebooks are [Lab 1](lab1/IVTA_03121026_Peppas_Michael_1.ipynb) and [Lab 2](lab2/IVTA_03121026_Peppas_Michael_2.ipynb). Instructor notebooks are in [lab_material/](lab_material/); they are supporting teaching material, not additional student submissions.
 
-Lab 1 uses `skimage.data.camera()` and attempts external downloads of the Lena image, with a manual `lena.png` upload fallback. Lab 2 downloads CIFAR-100 and pretrained Keras weights and reads the course's class-selection/label tables from Pastebin. Those small external tables have not been copied without established distribution rights. `q1_grid_results.csv` is a generated intermediate needed by the resume section; it is not committed, so a fresh runtime needs the original exported CSV or a new Q1 grid run. Lab 2 writes further CSV/plot outputs to its configured paths.
+Lab 1 uses `skimage.data.camera()` and attempts external downloads of the Lena image, with a manual `lena.png` upload fallback. Lab 2 downloads CIFAR-100 and pretrained Keras weights and reads the course's class-selection/label tables from Pastebin. `q1_grid_results.csv` is a generated intermediate needed by the resume section; it is not committed, so a fresh runtime needs the original exported CSV or a new Q1 grid run. Lab 2 writes further CSV/plot outputs to its configured paths.
 
 The result summaries above describe the stored coursework outputs. Lab 2 selects model configurations using test macro-F1, so the selected comparisons are exploratory and are not untouched-holdout estimates. Exact historical dependencies and independent numerical replay have not been re-established. Use a separate working copy and output directory for new runs; see the [asset inventory](../docs/ASSETS.md).

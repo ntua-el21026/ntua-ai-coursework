@@ -18,8 +18,6 @@ Open [AI_Lab2.ipynb](AI_Lab2/AI_Lab2.ipynb). Python reads movie metadata, assert
 
 Requirements include Python, NumPy, pandas, Matplotlib, scikit-learn, tqdm, `pyswip`, and an installed SWI-Prolog runtime. The notebook contains Colab installation and Drive cells, and repeats the original personal Drive path in several places. For a local copy, skip the Drive-mount cell, set each `path` assignment to the resolved `AI_Lab2_utils/` directory with a trailing separator, and consult the supplied `db.pl` as described in the notebook. For Colab, upload the same files or clone the repository and use its corresponding runtime path. Preserve the submitted notebook when adapting paths for a rerun.
 
-## Reproducibility and rights
+## Reproducibility
 
 The labs use different dependencies and are not distributed as an installable package or a locked environment. Inspect setup cells before execution and record actual versions, seeds, and input hashes. Run experiments on a copy and retain the original outputs.
-
-Movie data, course design, and starter material keep their original rights. See the repository's [publication and licensing notes](../README.md#authorship-publication-and-licensing) and [MIT license](../LICENSE) for the scope of original contributions.

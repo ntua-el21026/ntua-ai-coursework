@@ -12,7 +12,7 @@ The notebook implements maze generation, parameterized priority-queue search, he
 - Cell 68 describes repository image access.
 - Cell 69 sets `maze_folder = 'AI_Lab1_utils/'`, replacing the personal Google Drive mount and absolute maze path.
 
-All other source, metadata, execution counts, outputs, and the final AI-use disclaimer are preserved. Output messages still describe the historical executions, including the former Drive mount; the notebook has not been re-executed after these path changes. The original course instructions remain included and are not claimed as independently authored material.
+All other source, metadata, execution counts, outputs, and the final AI-use disclaimer are preserved. Output messages still describe the historical executions, including the former Drive mount; the notebook has not been re-executed after these path changes.
 
 ## Local Jupyter
 
@@ -40,6 +40,4 @@ Open the repository notebook in Colab or upload `AI_Lab1.ipynb`, then keep the r
 
 ## Interpreting the evidence
 
-The stored results are historical, with incomplete seed/runtime provenance. Some output-bearing code cells have null execution counts. The algorithm labeled BFS uses coordinate-ordered `PriorityQueue` ties with zero edge costs, rather than a FIFO BFS queue; its naming and accompanying claims remain preserved in the original submission. New correctness or performance conclusions require separate verification. No experiment or numerical test was run during integration.
-
-The repository [authorship and licensing notes](../../README.md#authorship-publication-and-licensing) apply. No posting prohibition was identified in this retrieved notebook; that observation does not grant rights to third-party course content.
+The stored results are historical, with incomplete seed/runtime provenance. Some output-bearing code cells have null execution counts. The algorithm labeled BFS uses coordinate-ordered `PriorityQueue` ties with zero edge costs, rather than a FIFO BFS queue; its naming and accompanying claims remain preserved in the original submission. New correctness or performance conclusions require separate verification.

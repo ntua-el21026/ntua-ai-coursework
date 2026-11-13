@@ -15,7 +15,7 @@ Eight laboratory submissions by **Michail-Athanasios Peppas (03121026)** for the
 | [Image and Video Technology and Analysis](Image_and_Video_Technology_and_Analysis/README.md) | 1 | [Gaussian/Laplacian pyramids, reconstruction, entropy, and quantization](Image_and_Video_Technology_and_Analysis/lab1/IVTA_03121026_Peppas_Michael_1.ipynb) |
 | Image and Video Technology and Analysis | 2 | [CIFAR-100 subset CNN comparison, regularization, and transfer learning](Image_and_Video_Technology_and_Analysis/lab2/IVTA_03121026_Peppas_Michael_2.ipynb) |
 
-[Image-analysis teaching notebooks](Image_and_Video_Technology_and_Analysis/lab_material/) and the original papers, handouts, templates, and supplied data provide context. They retain their respective authorship and rights.
+[Image-analysis teaching notebooks](Image_and_Video_Technology_and_Analysis/lab_material/) and the original papers, handouts, templates, and supplied data provide context.
 
 ## Inspection and execution
 
@@ -32,14 +32,6 @@ Record Python/package versions, hardware, seeds, data/model hashes, and the sour
 
 ## Evidence and limitations
 
-Recorded notebook outputs are the source for coursework results. They have not been independently numerically replayed during documentation preparation. Some output-bearing cells have null execution counts, and the historical environments are not fully frozen. The IVTA classifier selects configurations using test macro-F1; those comparisons are exploratory model selection, rather than an untouched confirmation test. ML Lab 2's header names 2023–24 while the earlier course overview named 2024–25; the completion year remains unresolved.
+Recorded notebook outputs are the source for coursework results. Some output-bearing cells have null execution counts, and the historical environments are not fully frozen. The IVTA classifier selects configurations using test macro-F1; those comparisons are exploratory model selection, rather than an untouched confirmation test. ML Lab 2's header names 2023–24 while the earlier course overview named 2024–25; the completion year remains unresolved.
 
 AI Lab 1 preserves its original algorithm names and conclusions. In particular, the combination labeled BFS uses a `PriorityQueue` with coordinate-based tie ordering and zero edge cost; it is not a conventional FIFO BFS implementation. The original work has not been changed to resolve that distinction.
-
-## Authorship, publication, and licensing
-
-The submissions identify Michail-Athanasios Peppas; assignment designs, starter code, teaching materials, datasets, pretrained models, and cited papers retain their original attribution. AI-use disclosures in the notebooks remain intact.
-
-Both Machine Learning notebooks explicitly prohibit posting laboratory solutions on GitHub or other websites and attribute the project design/content to the teaching team (Markdown cell 1, zero-based). Those notices and submissions are preserved. An applicable documented permission is required for public redistribution of that material. Repository visibility is not evidence of such permission.
-
-Course slides, handouts, papers, templates, datasets, and model assets require individual rights review. The [MIT license](LICENSE) covers original contributions only to the extent their authors hold the relevant rights; it does not override course restrictions or third-party terms.
